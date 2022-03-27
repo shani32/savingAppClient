@@ -14,18 +14,18 @@ export const Register = () => {
     name === "password" && setUser({ ...user, password: value });
   };
 
-  const onClickHandel = async ()=>{
+  const onClickHandel = async () => {
     axios
-    .post("https://savingappforbetterlife.herokuapp.com/api/v1/users/add", user)
-    .then(({ data }) => {
-      console.log("registerd");
-      window.localStorage.setItem("token", data.token);
-    })
-    .catch((error) => {
-      console.log(error.response.data);
-      console.log("Error");
-    });
-  }
+      .post("https://savingappserver.herokuapp.com/api/v1/users/add", user)
+      .then(({ data }) => {
+        console.log("registerd");
+        window.localStorage.setItem("token", data.token);
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+        console.log("Error");
+      });
+  };
   return (
     <>
       <div className="">

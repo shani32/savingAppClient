@@ -17,7 +17,9 @@ export const GlobalProvider = ({ children }) => {
   //actions
   async function getTransactions() {
     try {
-      const {data} = await axios.get("https://savingappforbetterlife.herokuapp.com/api/v1/transactions");
+      const { data } = await axios.get(
+        "https://savingappserver.herokuapp.com/api/v1/transactions"
+      );
       console.log("My Transaction", data);
       dispatch({
         type: "GET_TRANSACTIONS",
@@ -33,7 +35,9 @@ export const GlobalProvider = ({ children }) => {
 
   async function deleteTransaction(id) {
     try {
-      await axios.delete(`https://savingappforbetterlife.herokuapp.com/api/v1/transactions/${id}`);
+      await axios.delete(
+        `https://savingappserver.herokuapp.com/api/v1/transactions/${id}`
+      );
       dispatch({
         type: "DELETE_TRANSACTION",
         payload: id,
@@ -52,12 +56,16 @@ export const GlobalProvider = ({ children }) => {
       },
     };
     try {
-      const {data} = await axios.post("https://savingappforbetterlife.herokuapp.com/api/v1/transactions", transaction, config);
+      const { data } = await axios.post(
+        "https://savingappserver.herokuapp.com/api/v1/transactions",
+        transaction,
+        config
+      );
       dispatch({
         type: "ADD_TRANSACTION",
-        payload:data,
+        payload: data,
       });
-      console.log("transaction added success:", data)
+      console.log("transaction added success:", data);
     } catch (err) {
       dispatch({
         type: "TRANSACTIONS_ERROR",

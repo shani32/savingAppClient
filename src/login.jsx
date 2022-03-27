@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./login.css";
 import { useSetBackground } from "../src/Context/background.context";
 
-export const Login = ({setIsLoggedIn}) => {
+export const Login = ({ setIsLoggedIn }) => {
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -16,9 +16,6 @@ export const Login = ({setIsLoggedIn}) => {
     );
   }, []);
 
-  
-
-
   const onChangeHandle = ({ target }) => {
     const { name, value } = target;
     name === "email" && setUser({ ...user, email: value });
@@ -27,9 +24,9 @@ export const Login = ({setIsLoggedIn}) => {
 
   const onClickHandel = () => {
     axios
-      .post("https://savingappforbetterlife.herokuapp.com/api/v1/users/login", user)
+      .post("https://savingappserver.herokuapp.com/api/v1/users/login", user)
       .then(({ data }) => {
-        setIsLoggedIn(true)
+        setIsLoggedIn(true);
         tokenToLocalStorage(data[2]);
       })
       .catch((error) => {

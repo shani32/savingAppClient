@@ -5,13 +5,13 @@ import Transaction from "../atoms/transaction.components";
 import "./transactionsList.styles.css";
 
 const TransactionList = ({ transactions, setTransactions }) => {
-
-  const deleteTransaction =async (index) => {
-    console.log(index)
-    await axios.delete(`https://savingappforbetterlife.herokuapp.com/api/v1/transactions/${transactions[index]._id}`);
+  const deleteTransaction = async (index) => {
+    console.log(index);
+    await axios.delete(
+      `https://savingappserver.herokuapp.com/api/v1/transactions/${transactions[index]._id}`
+    );
     setTransactions(transactions.filter((_, i) => i !== index));
-  }
-
+  };
 
   return (
     <div className="transaction-container">
@@ -20,7 +20,11 @@ const TransactionList = ({ transactions, setTransactions }) => {
           <h3 className="transaction-expenses-header">Expenses of the month</h3>
           <ul id="transaction-list">
             {transactions.map((transaction, index) => (
-              <Transaction key={transaction._id} transaction={transaction} deleteTransaction={() => deleteTransaction(index)} />
+              <Transaction
+                key={transaction._id}
+                transaction={transaction}
+                deleteTransaction={() => deleteTransaction(index)}
+              />
             ))}
           </ul>
         </div>

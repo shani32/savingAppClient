@@ -51,9 +51,10 @@ const Login = () => {
   const setBackground = useSetBackground();
 
   useLayoutEffect(() => {
-    setBackground("https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F6e1a49b0-6817-11e8-996c-7589300f03c9.jpg?crop=2120%2C1192%2C0%2C110");
+    setBackground(
+      "https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F6e1a49b0-6817-11e8-996c-7589300f03c9.jpg?crop=2120%2C1192%2C0%2C110"
+    );
   }, []);
-
 
   const handleInput = ({ target: { value, name } }) =>
     dispatch({ name, payload: value });
@@ -62,10 +63,10 @@ const Login = () => {
     const newUser = inputsVal;
     event.preventDefault();
     const { data: user } = await axios.post(
-      "https://savingappforbetterlife.herokuapp.com/api/v1/users/login",
+      "https://savingappserver.herokuapp.com/api/v1/users/login",
       newUser
     );
-    if (!user) return alert("inValid")
+    if (!user) return alert("inValid");
     const [isLogin, details, token] = user;
     localStorage.setItem("isLogin", isLogin);
     localStorage.setItem("userDetails", JSON.stringify(details));

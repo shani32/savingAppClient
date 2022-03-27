@@ -53,18 +53,19 @@ const inputReducer = (state, action) => {
 const Register = () => {
   const [inputsVal, dispatch] = useReducer(inputReducer, INITIAL_STATE);
 
-
   const setBackground = useSetBackground();
 
   useLayoutEffect(() => {
-    setBackground("https://s37564.pcdn.co/wp-content/uploads/2016/11/salaries-31116-scaled.jpeg.optimal.jpeg");
+    setBackground(
+      "https://s37564.pcdn.co/wp-content/uploads/2016/11/salaries-31116-scaled.jpeg.optimal.jpeg"
+    );
   }, []);
 
   const onClickHandel = (e) => {
     e.preventDefault();
     console.log(inputsVal);
     axios
-      .post("https://savingappforbetterlife.herokuapp.com/api/v1/users/add", inputsVal)
+      .post("https://savingappserver.herokuapp.com/api/v1/users/add", inputsVal)
       .then(({ data }) => {
         console.log("register successfully", data);
       })
@@ -88,7 +89,9 @@ const Register = () => {
           ))}
         </div>
         <div className="register-submit-button-container">
-          <button onClick={onClickHandel} className="register-submit-button">Register</button>
+          <button onClick={onClickHandel} className="register-submit-button">
+            Register
+          </button>
         </div>
       </form>
     </div>

@@ -2,15 +2,13 @@ import React, { useState, useContext, useLayoutEffect } from "react";
 import { useSetBackground } from "../../Context/background.context";
 import { GlobalContext } from "../../Context/GlobalState";
 import "./addTransactions.styles.css";
-import  axios  from 'axios';
+import axios from "axios";
 
-const AddTransaction = ({setTransactions}) => {
+const AddTransaction = ({ setTransactions }) => {
   const [text, setText] = useState("");
   const [amount, setAmount] = useState(0);
 
   const setBackground = useSetBackground();
-
-
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -21,14 +19,18 @@ const AddTransaction = ({setTransactions}) => {
       amount: +amount,
     };
     alert(`${text} transaction of ${amount} has been added`);
-    const {data:{data:newTransaction}} = await axios.post("https://savingappforbetterlife.herokuapp.com/api/v1/transactions", transaction);
+    const {
+      data: { data: newTransaction },
+    } = await axios.post(
+      "https://savingappserver.herokuapp.com/api/v1/transactions",
+      transaction
+    );
     console.log(newTransaction);
     setTransactions((state) => {
-      state.push(newTransaction)
-      console.log(state)
-      return state
+      state.push(newTransaction);
+      console.log(state);
+      return state;
     });
-
   };
   return (
     <div className="container">
