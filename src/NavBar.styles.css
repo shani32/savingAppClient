@@ -1,0 +1,75 @@
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  background-color: #191919;
+  color: white;
+}
+
+
+.navbar-container a {
+  text-decoration: none;
+}
+/* .navbar-container a:hover{
+  background-color: white;
+  color: red;
+} */
+.side-one {
+  display: flex;
+  gap: 10px;
+  width: 300px;
+  justify-content: space-around;
+  margin-left: 40px;
+}
+.side-two {
+  float: right;
+}
+
+.fullname {
+  margin-right: 55px;
+  padding-right: 55px;
+  background-color: red;
+}
+
+.login {
+  margin-right: 70px;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  line-height: 1.2;
+}
+.login:hover, .home-icon:hover, .homepage-icon:hover, .transaction-icon:hover{
+background-color: white;
+color: #191919;
+height: 70px;
+}
+
+.register {
+  margin-right: 70px;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  line-height: 1.2;
+}
+.register:hover, .home-icon:hover, .homepage-icon:hover, .transaction-icon:hover{
+background-color: white;
+color: #191919;
+height: 70px;
+}
+
+.home-icon {
+  color: white;
+  padding-right: 10px;
+}
+.transaction-icon {
+  color: white;
+  height: 50px;
+}
+.homepage-icon{
+  color: white;
+  height: 50px;
+  padding-left: 10px;
+}

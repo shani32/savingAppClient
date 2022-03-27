@@ -1,0 +1,17 @@
+.list-item {
+  font-size: 23px;
+  padding: 10px 0px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid rgba(80, 80, 80, 0.3);
+  align-items: center;
+}
+
+.delete-button {
+  height: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+}

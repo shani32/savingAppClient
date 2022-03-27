@@ -1,0 +1,64 @@
+.register-container {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px 0 0 150px;
+}
+
+.register-header-container {
+  text-align: center;
+}
+
+.register-header-content {
+  font-size: 50px;
+  font-weight: 300;
+}
+
+.register-paper input {
+  margin-bottom: 5px;
+}
+
+.register-form {
+  width: 100%;
+  margin: 0px;
+}
+
+.register-paper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0px;
+  gap: 40px;
+}
+
+.register-input-field {
+  font-size: 30px;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.register-input-field:focus {
+  outline: none;
+  border: 2px solid gray;
+}
+
+.register-submit-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.register-submit-button {
+  background-color: rgb(66, 66, 195);
+  color: white;
+  height: 50px;
+  width: 75%;
+  border: 1px solid white;
+  font-size: 25px;
+  font-weight: 300;
+  border-radius: 5px;
+}

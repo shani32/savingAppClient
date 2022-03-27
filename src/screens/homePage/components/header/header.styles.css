@@ -1,0 +1,25 @@
+h2 {
+  font-size: 80px;
+  position: absolute;
+  right: 78px;
+  color: white;
+  top: 80px;
+  left: 100px;
+}
+ button.entry-btn {
+  position: absolute;
+  height: 100px;
+  width: 220px;
+  border-radius: 12px;
+  bottom: 100px;
+  text-align: center;
+  font-size: 32px;
+  right: 500px;
+  border: 5px solid black;
+} 
+.entry-btn:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #191919;
+  border: 2px solid white;
+}
