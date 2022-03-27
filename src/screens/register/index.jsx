@@ -63,7 +63,7 @@ const Register = () => {
 
   const onClickHandel = (e) => {
     e.preventDefault();
-    console.log(inputsVal);
+    
     axios
       .post("https://savingappserver.herokuapp.com/api/v1/users/add", inputsVal)
       .then(({ data }) => {

@@ -27,7 +27,7 @@ function App() {
     async function getTransactions() {
       const userIdTrans = JSON.parse(window.localStorage.getItem("userDetails"))._id;
       const { data: { data: transactionsData } } = await axios.get("https://savingappserver.herokuapp.com/api/v1/transactions/" + userIdTrans);
-      console.log(transactionsData)
+      
       setTransactions(transactionsData)
     }
     getTransactions()
